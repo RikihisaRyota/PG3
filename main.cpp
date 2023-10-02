@@ -1,24 +1,26 @@
 #include <iostream>
 
-int AddRecurrenceWage(int wage) {
-	return wage * 2 - 50;
+uint32_t CalcRecurrenceWage(uint32_t wage, uint32_t hours) {
+	if (hours <= 0) {
+		return wage;
+	}
+	return wage + CalcRecurrenceWage(wage * 2 - 50, hours - 1);
 }
 
-int AddGenericWage(int wage) {
-	const int kWage = 1072;
-	return wage += kWage;
+uint32_t CalcGenericWage(uint32_t wage, uint32_t hours) {
+	if (hours <= 0) {
+		return wage;
+	}
+	return wage + CalcGenericWage(wage,hours - 1);
 }
 int main() {
-	const int kHours = 10;
-	int recurrenceWage = 100;
-	int genericWage = 0;
-	for (int i = 0; i < kHours; i++) {
-		std::wcout << i << "時間" << std::endl;
-		std::wcout << "一般的な賃金体制:" << recurrenceWage << std::endl;
-		std::wcout << "再帰的な賃金体制:" << genericWage << std::endl;
-
-		recurrenceWage = AddRecurrenceWage(recurrenceWage);
-		genericWage = AddGenericWage(genericWage);
+	const uint32_t kHours = 10 - 1;
+	for (uint32_t i = 1; i < kHours; i++) {
+	uint32_t recurrenceWage = CalcRecurrenceWage(100, i - 1);
+	uint32_t genericWage = CalcGenericWage(1072, i - 1);
+	std::wcout << i << "時間" << std::endl;
+	std::wcout << "一般的な賃金体制:" << recurrenceWage << std::endl;
+	std::wcout << "再帰的な賃金体制:" << genericWage << std::endl;
 	}
 	return 0;
 }
