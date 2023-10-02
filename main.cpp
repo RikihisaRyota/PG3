@@ -14,7 +14,7 @@ void printMin(Type a) {
 
 template <>
 void printMin<char>(char a) {
-	printf_s("•¶š—ñˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ");
+	printf_s("æ–‡å­—åˆ—ä»¥å¤–ã¯ä»£å…¥ã§ãã¾ã›ã‚“");
 }
 
 
