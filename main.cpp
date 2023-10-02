@@ -1,20 +1,24 @@
-#include <stdio.h>
+#include <iostream>
 
-template <typename Type>
-Type Min(Type a, Type b) {
-	return a > b ? b : a;
+int AddRecurrenceWage(int wage) {
+	return wage * 2 - 50;
 }
 
-template <>
-char Min<char>(char a, char b) {
-	printf_s("•¶Žš—ñˆÈŠO‚Í‘ã“ü‚Å‚«‚Ü‚¹‚ñ");
-	return 0;
+int AddGenericWage(int wage) {
+	const int kWage = 1072;
+	return wage += kWage;
 }
-
 int main() {
-	printf_s("int(1,2):%d\n", Min<int>(1, 2));
-	printf_s("float(1.0f,2.0f):%f\n", Min<float>(1.0f, 2.0f));
-	printf_s("double(1.0f,2.0f):%f\n", Min<double>(static_cast<double>(1.0f), static_cast<double>(2.0f)));
-	printf_s("char(a,b):%f\n", Min<char>('a', 'b'));
+	const int kHours = 10;
+	int recurrenceWage = 100;
+	int genericWage = 0;
+	for (int i = 0; i < kHours; i++) {
+		std::wcout << i << "æ™‚é–“" << std::endl;
+		std::wcout << "ä¸€èˆ¬çš„ãªè³ƒé‡‘ä½“åˆ¶:" << recurrenceWage << std::endl;
+		std::wcout << "å†å¸°çš„ãªè³ƒé‡‘ä½“åˆ¶:" << genericWage << std::endl;
+
+		recurrenceWage = AddRecurrenceWage(recurrenceWage);
+		genericWage = AddGenericWage(genericWage);
+	}
 	return 0;
 }
