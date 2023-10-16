@@ -1,5 +1,10 @@
 #include <stdio.h>
 
-int main() {
+#include "Enemy.h"
 
+int main() {
+	Enemy* enemy = new Enemy();
+	enemy->Update();
+	delete enemy;
+	return 0;
 }
