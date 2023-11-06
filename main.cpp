@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <Windows.h>
 
 int main() {
-	char str[] = "PG3_04_01_Šm”F‰Û‘è";
+	char str[] = "PG3_04_01_ç¢ºèªèª²é¡Œ";
 	printf("%s", str);
 	return 0;
 }
