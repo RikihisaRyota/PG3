@@ -2,6 +2,7 @@
 #include <Windows.h>
 
 int main() {
-	SetConsoleOutputCP(65001);
+	char str[] = "PG3_04_01_Šm”F‰Û‘è";
+	printf("%s", str);
 	return 0;
 }
