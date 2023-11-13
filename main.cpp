@@ -17,9 +17,9 @@ private:
 	float radius_;
 };
 
-class RectAngle :public IShape {
+class Rectangle :public IShape {
 public:
-	RectAngle(float width, float height):width_(width),height_(height) {}
+	Rectangle(float width, float height):width_(width),height_(height) {}
 	void Size() override;
 	void Draw() override;
 private:
@@ -32,7 +32,7 @@ int main() {
 	const size_t kShape = 2;
 	IShape* shape[kShape];
 	shape[0] = new Circle(10.0f);
-	shape[1] = new RectAngle(10.0f,20.0f);
+	shape[1] = new Rectangle(10.0f,20.0f);
 
 	for (size_t i = 0; i < kShape; i++) {
 		shape[i]->Size();
@@ -54,10 +54,10 @@ void Circle::Draw() {
 	printf("size:%f\n", size_);
 }
 
-void RectAngle::Size() {
+void Rectangle::Size() {
 	size_ = height_ * width_;
 }
 
-void RectAngle::Draw() {
+void Rectangle::Draw() {
 	printf("size:%f\n", size_);
 }
