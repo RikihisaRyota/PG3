@@ -3,7 +3,7 @@
 
 class Fruit {
 public:
-	virtual void Name();
+	virtual void GetFruitType();
 protected:
 	const char* name_;
 };
@@ -11,13 +11,14 @@ protected:
 class Apple : public Fruit {
 public:
 	Apple(const char* name);
-	void Name() override;
+	void GetFruitType() override;
 };
 
 class Orange :public Fruit {
 public:
 	Orange(const char* name);
-	void Name() override;
+	void GetFruitType() override;
+	
 };
 
 
@@ -26,19 +27,15 @@ int main() {
 	std::vector<Fruit*> fruits;
 
 	// 生成
-	for (size_t i = 0; i < kFruitSize; i++) {
-		if (i < 1) {
-			Apple* apple=new Apple("Apple");
-			fruits.emplace_back(apple);
-		}
-		else {
-			Orange* orange = new Orange("Orange");
-			fruits.emplace_back(orange);
-		}
-	}
+	Apple* apple_0 = new Apple("王林");
+	fruits.emplace_back(apple_0);
+	Apple* apple_1 = new Apple("つがる");
+	fruits.emplace_back(apple_1);
+	Orange* orange = new Orange("ブラットオレンジ");
+	fruits.emplace_back(orange);
 
 	for (auto& fruit : fruits) {
-		fruit->Name();
+		fruit->GetFruitType();
 	}
 
 	// 破棄
@@ -48,16 +45,17 @@ int main() {
 	return 0;
 }
 
-void Fruit::Name() {
-	printf("Name:%s\n", name_);
+void Fruit::GetFruitType() {
+	printf("GetFruitType:%s\n", name_);
 }
 
 Apple::Apple(const char* name) {
 	name_ = name;
 }
 
-void Apple::Name() {
-	printf("Name:%s\n", name_);
+void Apple::GetFruitType() {
+	printf("%sはリンゴの品種である\n", name_);
+	printf("旬は秋から冬にかけてです");
 }
 
 
@@ -65,6 +63,7 @@ Orange::Orange(const char* name) {
 	name_ = name;
 }
 
-void Orange::Name() {
-	printf("Name:%s\n", name_);
+void Orange::GetFruitType() {
+	printf("%sはオレンジの品種である\n", name_);
+	printf("旬は春です");
 }
