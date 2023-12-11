@@ -35,7 +35,7 @@ int main() {
 		"Shimbashi",
 		"Yurakucho"
 	};
-	std::cout << "1970”N‚ÌRèü‰wˆê——" << std::endl;
+	std::cout << "1970å¹´ã®å±±æ‰‹ç·šé§…ä¸€è¦§" << std::endl;
 	for (auto& name : stationName) {
 		std::cout << name << std::endl;
 	}
@@ -45,7 +45,7 @@ int main() {
 	findStationNameIterator++;
 	stationName.insert(findStationNameIterator, "Nishi-nippori");
 
-	std::cout << "2019”N‚ÌRèü‰wˆê——" << std::endl;
+	std::cout << "2019å¹´ã®å±±æ‰‹ç·šé§…ä¸€è¦§" << std::endl;
 	for (auto& name : stationName) {
 		std::cout << name << std::endl;
 	}
@@ -54,7 +54,7 @@ int main() {
 	findStationNameIterator = std::find(stationName.begin(), stationName.end(), "Shinagawa");
 	findStationNameIterator++;
 	findStationNameIterator = stationName.insert(findStationNameIterator, "TakanawaGateway");
-	std::cout << "2022”N‚ÌRèü‰wˆê——" << std::endl;
+	std::cout << "2022å¹´ã®å±±æ‰‹ç·šé§…ä¸€è¦§" << std::endl;
 	for (auto& name : stationName) {
 		std::cout << name << std::endl;
 	}
