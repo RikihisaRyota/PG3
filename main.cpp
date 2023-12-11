@@ -43,7 +43,7 @@ int main() {
 
 	auto findStationNameIterator = std::find(stationName.begin(), stationName.end(), "Nippori");
 	findStationNameIterator++;
-	stationName.insert(findStationNameIterator, "Nishinippori");
+	stationName.insert(findStationNameIterator, "Nishi-nippori");
 
 	std::cout << "2019”N‚ÌŽRŽèü‰wˆê——" << std::endl;
 	for (auto& name : stationName) {
