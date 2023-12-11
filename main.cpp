@@ -4,10 +4,9 @@
 #include <algorithm>
 #include <iostream>
 #include <list>
-#include <string>
 
 int main() {
-	std::list<std::string> className = {
+	std::list<const char*> className = {
 		"k022g0108@g.neec.ac.jp","k022g0045@g.neec.ac.jp",
 		"k022g0007@g.neec.ac.jp","k022g0015@g.neec.ac.jp",
 		"k022g0028@g.neec.ac.jp","k022g0049@g.neec.ac.jp",
@@ -69,7 +68,11 @@ int main() {
 		"k022g0001@g.neec.ac.jp"
 	};
 
-	std::sort(className.begin(), className.end());
+	std::sort(className.begin(), className.end(), [](const char* a, const char* b) {
+		int idA = std::atoi(a + 6);
+		int idB = std::atoi(b + 6);
+		return idA < idB;
+		});
 
 	for (auto& name : className) {
 		std::cout << name << std::endl;
