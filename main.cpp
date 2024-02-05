@@ -43,7 +43,7 @@ int main() {
 
 	auto findStationNameIterator = std::find(stationName.begin(), stationName.end(), "Nippori");
 	findStationNameIterator++;
-	stationName.insert(findStationNameIterator, "Nishi-nippori");
+	stationName.insert(findStationNameIterator, "Nishi-Nippori");
 
 	std::cout << "2019年の山手線駅一覧" << std::endl;
 	for (auto& name : stationName) {
